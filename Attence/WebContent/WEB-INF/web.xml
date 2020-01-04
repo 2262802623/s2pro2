@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Attence</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 配置字符编码过滤器 -->
+  <filter>
+  		<filter-name>EncodingFilter</filter-name>
+  		<filter-class>com.Attence.filter.EncodingFilter</filter-class>
+  		<init-param>
+  				<param-name>encoding</param-name>
+  				<param-value>UTF-8</param-value>
+  		</init-param>
+  		<init-param>
+  				<param-name>type</param-name>
+  				<param-value>text/html; charset=UTF-8</param-value>
+  		</init-param>
+  </filter>
+  <filter-mapping>
+  		<filter-name>EncodingFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- 查询 -->
+  <servlet>
+  	<servlet-name>showservlet</servlet-name>
+  	<servlet-class>com.Attence.servlet.showservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>showservlet</servlet-name>
+  	<url-pattern>/GB</url-pattern>
+  </servlet-mapping>
+  <!-- 添加 -->
+  <servlet>
+  	<servlet-name>ADDservlet</servlet-name>
+  	<servlet-class>com.Attence.servlet.ADDservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ADDservlet</servlet-name>
+  	<url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <!-- 修改 -->
+  <servlet>
+  	<servlet-name>Alterservlet</servlet-name>
+  	<servlet-class>com.Attence.servlet.Alterservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Alterservlet</servlet-name>
+  	<url-pattern>/alter</url-pattern>
+  </servlet-mapping>
+  <!-- 获取id -->
+  <servlet>
+  	<servlet-name>Acquireservlet</servlet-name>
+  	<servlet-class>com.Attence.servlet.Acquireservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Acquireservlet</servlet-name>
+  	<url-pattern>/acquire</url-pattern>
+  </servlet-mapping>
+  <!-- 删除 -->
+  <servlet>
+  	<servlet-name>Deleteservlet</servlet-name>
+  	<servlet-class>com.Attence.servlet.Deleteservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Deleteservlet</servlet-name>
+  	<url-pattern>/dele</url-pattern>
+  </servlet-mapping>
+</web-app>
